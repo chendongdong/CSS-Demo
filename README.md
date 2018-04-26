@@ -7,9 +7,6 @@
 当父元素没设置足够大小的时候，而子元素设置了浮动的属性，子元素就会跳出父元素的边界（脱离文档流），尤其是当父元素的高度为auto时，而父元素中又没有其他非浮动的可见元素时，父盒子的高度就会直接坍塌为零，我们称这是CSS高度坍塌
 
 举个栗子：
-//<div class="empty-div">
-//  <span class="float-content">测试内容</span>
-//</div>
 
  .empty-div{
     margin-top: 20px;
@@ -78,3 +75,16 @@
   }
 
 demo代码：https://github.com/chendongdong/CSS-Demo/blob/master/src/components/CSSDemo1.vue
+
+# CSS盒子坍塌
+
+1.流体布局：左右元素使用float，main设置左右margin
+
+2.圣杯布局：main使用float+width:100%，
+    左使用position:relative+float+left:负值+margin-left:负值；
+    右使用position:relative+float+right:负值+margin-left:负值
+
+3.双飞翼布局：content3设置float:left+width:100%，main3:左右设置margin,
+    left3设置float:left+margin-left:-100%,right3设置float:right+margin-left:负值
+
+demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo2.vue
