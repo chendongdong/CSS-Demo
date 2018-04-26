@@ -19,7 +19,8 @@
 > 解决盒子坍塌的方法：
 
 1）简单粗暴的方法就是直接将盒子大小写死，给每个盒子设定固定的width和height，直到合适为止，缺点就是非自适应，浏览器的窗口大小直接影响用户体验
- 关键代码：
+
+关键代码：
   .empty-div{
     margin-top: 20px;
     background: yellow;
@@ -76,7 +77,7 @@
 
 demo代码：https://github.com/chendongdong/CSS-Demo/blob/master/src/components/CSSDemo1.vue
 
-# CSS盒子坍塌
+# 常见布局
 
 1.流体布局：左右元素使用float，main设置左右margin
 
