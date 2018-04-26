@@ -7,9 +7,9 @@
 当父元素没设置足够大小的时候，而子元素设置了浮动的属性，子元素就会跳出父元素的边界（脱离文档流），尤其是当父元素的高度为auto时，而父元素中又没有其他非浮动的可见元素时，父盒子的高度就会直接坍塌为零，我们称这是CSS高度坍塌
 
 举个栗子：
-#<div class="empty-div">
-#  <span class="float-content">测试内容</span>
-#</div>
+//<div class="empty-div">
+//  <span class="float-content">测试内容</span>
+//</div>
 
  .empty-div{
     margin-top: 20px;
