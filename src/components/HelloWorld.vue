@@ -2,8 +2,9 @@
   <div class="hello">
     <!--<h1>{{ msg }}</h1>-->
     <!--<h2>Essential Links</h2>-->
-    <div @click="jump2Demo1">跳转到CSSDemo1</div>
-    <router-link to="/css-demo2">跳转到CSSDemo2</router-link>
+    <router-link to="/css-demo1">跳转到CSSDemo1 盒子坍塌处理</router-link><br/>
+    <router-link to="/css-demo2">跳转到CSSDemo2 常见布局</router-link><br/>
+    <router-link to="/css-demo3">跳转到CSSDemo3 居中方法</router-link><br/>
     <ul>
       <li>
         <a

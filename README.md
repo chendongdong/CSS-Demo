@@ -89,3 +89,42 @@ demo代码：https://github.com/chendongdong/CSS-Demo/blob/master/src/components
     left3设置float:left+margin-left:-100%,right3设置float:right+margin-left:负值
 
 demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo2.vue
+
+# 居中方法
+
+1.左边定宽，右边自适应方案：float + margin，float + calc
+
+2.左右两边定宽，中间自适应：float，float + calc, 圣杯布局（设置BFC，margin负值法），flex
+
+3.左右居中
+
+行内元素: text-align: center
+
+定宽块状元素: 左右 margin 值为 auto
+
+不定宽块状元素: table布局，position + transform
+
+4.上下垂直居中
+
+定高：margin，line-height, position + margin(负值)
+
+不定高：position + transform，flex，IFC + vertical-align:middle
+
+垂直居中：
+1.单行文本：使用height和line-height设置同一高度
+
+2.postion+margin：设置父元素position:relative,子元素position:absolute;top:50%;margin-top:-50px;(子元素高度确定为100px)
+
+3.postion+transform：设置父元素position:relative,子元素position:absolute;top:50%;transform:translateY(-50%);(子元素不确定高度)
+
+4.position+margin auto：设置父元素position:relative,子元素position:absolute;top:0;bottom:0;margin:auto;height:50px;
+line-height:50px;(关键：设置top=bottom，子元素要设置高度，除图片不用设置，自带高度)
+
+5.百搭flex布局，用得最多，功能强大，灵活方便，设置父元素display:flex;align-item:center;
+
+6.line-height+vertical-align;父元素设置line-height:100px;height:100px;子元素设置vertical-align:middle
+
+7.dispaly table+vertical-align：父元素设置display:table;子元素设置display:table-cell;vertical-align:middle;
+vertical-align属性只对拥有valign特性的html元素起作用，例如表格元素<td><th>等，而像<div><span>这样的元素时不行的
+
+demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo3.vue
