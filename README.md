@@ -128,3 +128,27 @@ line-height:50px;(关键：设置top=bottom，子元素要设置高度，除图�
 vertical-align属性只对拥有valign特性的html元素起作用，例如表格元素<td><th>等，而像<div><span>这样的元素时不行的
 
 demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo3.vue
+
+# 盒模型
+
+盒模型：content（元素内容） + padding（内边距） + border（边框） + margin（外边距）
+
+延伸： box-sizing
+
+content-box：默认值，总宽度 = margin + border + padding + width
+
+border-box：盒子宽度包含 padding 和 border，总宽度 = margin + width
+
+inherit：从父元素继承 box-sizing 属性
+
+标准模式：width与height指的是内容区域的宽高，增加padding、border、margin会影响总体尺寸
+
+怪异模式：width与height指内容区+padding+border，增加padding、border不会影响总体尺寸
+
+例如：width = 100px, border = 10px, padding: 10px
+标准模式：总宽度 = width + border*2 + padding*2 = 140px
+
+怪异模式：总宽度 = width = 100px = contentWidth + border*2 + padding*2   即 contentWidth=60px
+当width小于border+padding的值时, contendWidth=0,盒子的宽度会被border和padding的宽度撑开
+
+demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo4.vue

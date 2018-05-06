@@ -1,33 +1,56 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import CSSDemo1 from '@/components/CSSDemo1'
-import CSSDemo2 from '@/components/CSSDemo2'
-import CSSDemo3 from '@/components/CSSDemo3'
+
+const lazyLoading = (name) => () => import('@/components/' + name)
 
 Vue.use(Router)
+
+const menus = [
+  {
+    path: '/css-demo1',
+    name: 'CSSDemo1',
+    component: lazyLoading('CSSDemo1')
+  },
+  {
+    path: '/css-demo2',
+    name: 'CSSDemo2',
+    component: lazyLoading('CSSDemo2')
+  },
+  {
+    path: '/css-demo3',
+    name: 'CSSDemo3',
+    component: lazyLoading('CSSDemo3')
+  },
+  {
+    path: '/css-demo4',
+    name: 'CSSDemo4',
+    component: lazyLoading('CSSDemo4')
+  }
+]
 
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: lazyLoading('HelloWorld')
     },
     {
-      path: '/css-demo1',
-      name: 'CSSDemo1',
-      component: CSSDemo1
+      path: '*',
+      redirect: '/'
     },
-    {
-      path: '/css-demo2',
-      name: 'CSSDemo2',
-      component: CSSDemo2
-    },
-    {
-      path: '/css-demo3',
-      name: 'CSSDemo3',
-      component: CSSDemo3
-    }
+    ...generateRoute(menus)
   ]
 })
+
+function generateRoute (menu = [], routes = []) {
+  menu.forEach(item => {
+    if (item.path) {
+      routes.push(item)
+    }
+    if (!item.component) {
+      generateRoute(item.children, routes)
+    }
+  })
+  return routes
+}

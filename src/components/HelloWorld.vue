@@ -5,6 +5,8 @@
     <router-link to="/css-demo1">跳转到CSSDemo1 盒子坍塌处理</router-link><br/>
     <router-link to="/css-demo2">跳转到CSSDemo2 常见布局</router-link><br/>
     <router-link to="/css-demo3">跳转到CSSDemo3 居中方法</router-link><br/>
+    <router-link to="/css-demo4">跳转到CSSDemo4 盒子模型</router-link><br/>
+    <div class="line">线条</div>
     <ul>
       <li>
         <a
@@ -117,5 +119,15 @@ li {
 }
 a {
   color: #42b983;
+}
+  .line{
+    margin-top: 20px;
+    border-top: 1px solid #999;
+  }
+  .line::before{
+    border-top: 1px solid red;
+  }
+.line:after{
+  border-bottom: 1px solid green;
 }
 </style>
