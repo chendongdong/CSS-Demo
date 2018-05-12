@@ -6,6 +6,7 @@
     <router-link to="/css-demo2">跳转到CSSDemo2 常见布局</router-link><br/>
     <router-link to="/css-demo3">跳转到CSSDemo3 居中方法</router-link><br/>
     <router-link to="/css-demo4">跳转到CSSDemo4 盒子模型</router-link><br/>
+    <router-link to="/list-demo">跳转到ListDemo 列表布局</router-link><br/>
     <div class="line">线条</div>
     <ul>
       <li>

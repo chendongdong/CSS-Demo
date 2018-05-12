@@ -25,6 +25,11 @@ const menus = [
     path: '/css-demo4',
     name: 'CSSDemo4',
     component: lazyLoading('CSSDemo4')
+  },
+  {
+    path: '/list-demo',
+    name: 'ListDemo',
+    component: lazyLoading('ListDemo')
   }
 ]
 
