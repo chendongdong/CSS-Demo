@@ -152,3 +152,85 @@ inherit：从父元素继承 box-sizing 属性
 当width小于border+padding的值时, contendWidth=0,盒子的宽度会被border和padding的宽度撑开
 
 demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/CSSDemo4.vue
+
+# 0.5px边框
+
+// 左边的边框，关键属性left/right，transform:X轴偏移0.5，值越小线越细
+            &:before{
+                position: absolute;
+                /*width: 1px;*/
+                color: #d9d9d9;
+                left: 0;
+                content: ' ';
+                top: 0;
+                bottom: 0;
+                border-left: 1px solid #d9d9d9;
+                /*transform-origin: 100% 0;*/
+                transform: scaleX(.5);
+            }
+            // 右边的边框
+            &:after{
+                position: absolute;
+                width: 1px;
+                color: #d9d9d9;
+                content: ' ';
+                top: 0;
+                bottom: 0;
+                right: 0;
+                border-left: 1px solid #d9d9d9;
+                transform-origin: 100% 0;
+                transform: scaleX(.5);
+            }
+
+// 上面的边框
+            &:before{
+                position: absolute;
+                height: 1px;
+                color: #d9d9d9;
+                left: 0;
+                right: 0;
+                content: ' ';
+                top: 0;
+                border-top: 1px solid #d9d9d9;
+                transform-origin: 0 0;
+                transform: scaleY(.5);
+            }
+            // 下面的边框
+            &:after{
+                position: absolute;
+                height: 1px;
+                color: #d9d9d9;
+                left: 0;
+                right: 0;
+                content: ' ';
+                bottom: 0;
+                border-bottom: 1px solid #d9d9d9;
+                transform-origin: 0 100%;
+                transform: scaleY(.5);
+            }
+
+    <div class="text">
+            我是cssTest页面---加粗，斜体，25px--scoped
+            <span>span--111</span><br>
+            <span>span---222</span><br>
+        </div>
+        <a>相邻aaa---111</ a><br>
+        <a>相邻aaa---222</ a><br>
+        <a>相邻aaa---333</ a><br>
+        <p>相邻元素--pppp--11111</p >
+        <p>相邻元素--pppp--22222</p >
+        <p>相邻元素--pppp--3333
+
+.text{
+            + a{ color: blue} // 相邻的一个兄弟p元素
+            ~ p{color: blue} // 后面的所有p元素
+            > span{ color: red } // 所有子元素
+        }
+
+calc 使用：
+在less中 calc(100% -4rem) 等带单位混合运算会被less解析忽略单位，全部按照百分比计算，此例中的计算被less编译成calc(96%)
+
+解决方案：
+width:calc(~"100% - 4rem");
+
+scss中使用：width:calc(100% - 4rem)
