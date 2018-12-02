@@ -234,3 +234,32 @@ calc 使用：
 width:calc(~"100% - 4rem");
 
 scss中使用：width:calc(100% - 4rem)
+
+
+
+# 常见动画
+requestAnimationFrame的方式的优势如下：
+
+1.经过浏览器优化，动画更流畅
+
+2.窗口没激活时，动画将停止，省计算资源
+
+3.更省电，尤其是对移动终端
+
+用法：
+var animationId;
+function animate() {
+  animationId=requestAnimationFrame(animate);
+}
+animationId=requestAnimationFrame(animate);//开始
+cancelAnimationFrame(animationId);//结束
+
+
+forEach 用于遍历数组，不能中断遍历
+
+for...in 一般用于遍历对象，遍历值是key，并且会把原型的属性和方法也遍历出来，可以使用hasOwnProperty方法判断是否是自己的属性
+
+for...of 适用于对象和数组，遍历值是value，避免了遍历原型的属性和方法
+遍历对象时遍历Object.keys(obj)，直接遍历obj会报错，因为对象没有iterator接口，不能直接遍历
+
+demo代码: https://github.com/chendongdong/CSS-Demo/blob/dev/src/components/Animation.vue
