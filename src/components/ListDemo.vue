@@ -26,5 +26,23 @@
       <dd>二级</dd>
       <dd>二级</dd>
     </dl>
+    <div style="column-count: 3;column-width: 300px;background: red">测试</div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    fun(){
+      console.log(arguments[0])
+      console.log(typeof arguments)
+      console.log(arguments instanceof Object)
+      console.log(arguments instanceof Array)
+    }
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.fun('haha', 12)
+    })
+  }
+}
+</script>
